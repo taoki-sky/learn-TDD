@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* カスタムスタイル */
+@layer base {
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-apple {
+    @apply px-4 py-2 rounded-apple font-medium transition-all duration-200 shadow-apple;
+  }
+
+  .btn-apple-primary {
+    @apply btn-apple bg-apple-blue text-white hover:bg-blue-600 active:bg-blue-700;
+  }
+
+  .btn-apple-secondary {
+    @apply btn-apple bg-apple-gray-6 text-apple-gray hover:bg-apple-gray-5 active:bg-apple-gray-4;
+  }
+
+  .card-apple {
+    @apply bg-white rounded-apple-lg shadow-apple-lg border border-apple-gray-4;
+  }
+
+  .text-apple-title {
+    @apply text-2xl font-bold text-gray-800;
+  }
+
+  .text-apple-body {
+    @apply text-base text-gray-600;
+  }
+
+  .text-apple-caption {
+    @apply text-sm text-apple-gray;
+  }
+}

@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-white text-apple-gray-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-apple-blue text-white px-6 py-3 rounded-xl font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-apple-gray-100 text-apple-gray-900 px-6 py-3 rounded-xl font-medium hover:bg-apple-gray-200 transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-apple-gray-200 p-6;
+  }
+  
+  .code-block {
+    @apply bg-apple-gray-50 rounded-xl p-4 font-mono text-sm border border-apple-gray-200;
+  }
+}

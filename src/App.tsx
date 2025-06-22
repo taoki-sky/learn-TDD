@@ -32,32 +32,40 @@ function App() {
   const step = steps[currentStep]
 
   return (
-    <div className="min-h-screen bg-apple-gray-6 font-apple">
-      <div className="max-w-7xl mx-auto px-4 py-6">
-        <Header />
-        
-        <ProgressBar 
-          currentStep={currentStep} 
-          totalSteps={steps.length} 
-        />
+    <div className="h-screen bg-apple-gray-6 font-apple flex flex-col">
+      <div className="max-w-7xl mx-auto px-4 w-full flex flex-col h-full">
+        {/* ヘッダー部分 - 固定サイズ */}
+        <div className="flex-shrink-0 py-6">
+          <Header />
+          <ProgressBar 
+            currentStep={currentStep} 
+            totalSteps={steps.length} 
+          />
+        </div>
 
-        <DualPanel 
-          step={step}
-          currentPhase={currentPhase}
-          onPhaseChange={handlePhaseChange}
-        />
+        {/* メインコンテンツ - スクロール可能 */}
+        <div className="flex-1 overflow-y-auto pb-4">
+          <DualPanel 
+            step={step}
+            currentPhase={currentPhase}
+            onPhaseChange={handlePhaseChange}
+          />
 
-        <LearningPanel 
-          step={step}
-          currentPhase={currentPhase}
-        />
+          <LearningPanel 
+            step={step}
+            currentPhase={currentPhase}
+          />
+        </div>
 
-        <Navigation 
-          currentStep={currentStep}
-          totalSteps={steps.length}
-          onNext={handleNext}
-          onPrevious={handlePrevious}
-        />
+        {/* フッター - 固定サイズ */}
+        <div className="flex-shrink-0 py-4 bg-apple-gray-6 border-t border-apple-gray-4">
+          <Navigation 
+            currentStep={currentStep}
+            totalSteps={steps.length}
+            onNext={handleNext}
+            onPrevious={handlePrevious}
+          />
+        </div>
       </div>
     </div>
   )

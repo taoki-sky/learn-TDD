@@ -1,90 +1,94 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+このファイルは、このリポジトリでのコード作業時にClaude Code (claude.ai/code) にガイダンスを提供します。
 
-## Project Overview
+## 重要なルール
 
-This is a TDD (Test-Driven Development) Interactive Learning Simulator designed to help developers understand the essential value of TDD through hands-on experience. The project aims to solve the common misconception that TDD is just "tedious work" by providing experiential learning.
+**日本語での回答**: このプロジェクトでは、Claude Code は常に日本語で回答してください。ユーザーとのやり取りは全て日本語で行います。
 
-**Core Value Proposition**: Enable developers to understand "why write tests first" through practical experience rather than theoretical explanations.
+## プロジェクト概要
 
-## Project Architecture
+これは、開発者がハンズオン体験を通してTDD（テスト駆動開発）の本質的価値を理解できるTDD対話型学習シミュレーターです。このプロジェクトは、TDDが「面倒な作業」という一般的な誤解を体験的学習によって解決することを目的としています。
 
-### Learning Experience Design
-The application follows a "体験駆動学習" (Experience-Driven Learning) approach with progressive disclosure:
-1. Concept explanation → 2. Practical experience → 3. Difference realization → 4. Value understanding
+**核心的価値提案**: 理論的説明ではなく実践的体験を通して、開発者に「なぜテストを先に書くのか」を理解させる。
 
-### Main UI Structure
-- **Dual Panel Design**: TDD development (left) vs Traditional development (right)
-- **Step-by-step Progress**: 5-stage TDD cycle visualization
-- **Interactive Testing**: Users can input values to test both approaches
-- **Real-time Comparison**: Side-by-side quality difference demonstration
+## プロジェクトアーキテクチャ
 
-### Technical Stack
-- **React + TypeScript**: Component-based architecture for step-by-step visualization
-- **Jest**: TDD examples and testing framework
-- **Tailwind CSS**: Rapid prototyping and responsive design
-- **Netlify**: Deployment platform
+### 学習体験設計
+アプリケーションは段階的開示による「体験駆動学習」アプローチに従います：
+1. 概念説明 → 2. 実践体験 → 3. 違いの実感 → 4. 価値の理解
 
-## Learning Content: FizzBuzz Case Study
+### メインUI構造
+- **デュアルパネル設計**: TDD開発（左）vs 従来開発（右）
+- **ステップバイステップ進捗**: 5段階のTDDサイクル可視化
+- **インタラクティブテスト**: ユーザーが両方のアプローチをテストできる入力機能
+- **リアルタイム比較**: サイドバイサイドでの品質差異の実演
 
-The main educational content uses FizzBuzz as the teaching example, structured in 5 learning steps:
+### 技術スタック
+- **React + TypeScript**: ステップバイステップ可視化のためのコンポーネントベースアーキテクチャ
+- **Jest**: TDDの例とテストフレームワーク
+- **Tailwind CSS**: 迅速なプロトタイピングとレスポンシブデザイン
+- **Netlify**: デプロイプラットフォーム
 
-1. **Step 1**: Basic number output - Understanding "why start with failing tests"
-2. **Step 2**: Multiples of 3 → "Fizz" - Value of minimal implementation
-3. **Step 3**: Multiples of 5 → "Buzz" - Safety of incremental expansion
-4. **Step 4**: Multiples of 15 → "FizzBuzz" - Edge cases and refactoring importance
-5. **Step 5**: Array support and error handling - Safe feature expansion with TDD
+## 学習コンテンツ: FizzBuzzケーススタディ
 
-### Key Learning Moments
-Each step is designed to create "aha moments" where learners realize:
-- Tests help with design
-- Minimal implementation has value
-- Existing functionality safety
-- Refactoring confidence
-- Easy feature expansion
+メインの教育コンテンツはFizzBuzzを教材例として使用し、5つの学習ステップで構成されています：
 
-## Development Commands
+1. **ステップ1**: 基本数値出力 - 「なぜ失敗するテストから始めるのか」の理解
+2. **ステップ2**: 3の倍数 → "Fizz" - 最小実装の価値
+3. **ステップ3**: 5の倍数 → "Buzz" - 段階的拡張の安全性
+4. **ステップ4**: 15の倍数 → "FizzBuzz" - エッジケースとリファクタリングの重要性
+5. **ステップ5**: 配列対応とエラーハンドリング - TDDによる安全な機能拡張
 
-**Note**: This project is in early planning phase. No package.json or build scripts exist yet. When implementing:
-- Use React development server for hot reloading
-- Implement Jest for testing examples
-- Use npm/yarn for dependency management
-- Set up linting with ESLint + Prettier for code quality
+### 重要な学習の瞬間
+各ステップは学習者が以下に気づく「あはモーメント」を作るよう設計されています：
+- テストは設計を助ける
+- 最小実装に価値がある
+- 既存機能の安全性
+- リファクタリングの信頼性
+- 機能拡張の容易さ
 
-## Quality Comparison Features
+## 開発コマンド
 
-The application demonstrates quality differences between TDD and traditional approaches:
+**注意**: このプロジェクトは初期計画段階にあります。package.jsonやビルドスクリプトはまだ存在しません。実装時は以下を行います：
+- ホットリロード用のReact開発サーバーを使用
+- テスト例用のJestを実装
+- 依存関係管理にnpm/yarnを使用
+- コード品質のためにESLint + Prettierでリンティング設定
 
-### Input Validation Comparison
-- **TDD version**: Proper error messages for invalid inputs (strings, negative numbers, zero)
-- **Traditional version**: NaN errors, unexpected behavior, crashes
+## 品質比較機能
 
-### Code Maintainability
-- **TDD version**: Independent, testable functions
-- **Traditional version**: Monolithic if-else blocks
+アプリケーションはTDDと従来のアプローチの品質差異を実演します：
 
-### Bug Discovery Timing
-- **TDD version**: Issues caught during implementation
-- **Traditional version**: Issues discovered during user interaction
+### 入力検証の比較
+- **TDD版**: 無効な入力（文字列、負数、ゼロ）に対する適切なエラーメッセージ
+- **従来版**: NaNエラー、予期しない動作、クラッシュ
 
-## Development Phases
+### コードの保守性
+- **TDD版**: 独立したテスト可能な関数
+- **従来版**: モノリシックなif-elseブロック
 
-1. **Phase 1**: Learning content design (3 days)
-2. **Phase 2**: Basic functionality implementation (5 days)  
-3. **Phase 3**: Comparison features implementation (5 days)
-4. **Phase 4**: Learning experience enhancement (3 days)
+### バグ発見のタイミング
+- **TDD版**: 実装中に問題をキャッチ
+- **従来版**: ユーザーインタラクション時に問題を発見
 
-## Success Metrics
+## 開発フェーズ
 
-- Completion rate: 85%+
-- Step comprehension: 4.5/5 average
-- "Want to practice TDD": 80%+
-- Qualitative: Understanding TDD's essential value in the AI era
+1. **フェーズ1**: 学習コンテンツ設計（3日）
+2. **フェーズ2**: 基本機能実装（5日）
+3. **フェーズ3**: 比較機能実装（5日）
+4. **フェーズ4**: 学習体験向上（3日）
 
-## Key Principles
+## 成功指標
 
-- **Learning experience over technical complexity**: Hide technical details to focus on TDD concepts
-- **Interactive discovery**: Let users experience differences rather than explaining them
-- **Progressive disclosure**: Reveal information step-by-step to avoid cognitive overload
-- **Concrete examples**: Use specific, relatable scenarios rather than abstract concepts
+- 完了率: 85%以上
+- ステップ理解度: 平均4.5/5
+- 「TDDを実践したい」: 80%以上
+- 定性的: AI時代におけるTDDの本質的価値の理解
+
+## 重要な原則
+
+- **技術的複雑さより学習体験**: TDDの概念に集中するために技術的詳細を隠蔽
+- **インタラクティブな発見**: 説明するのではなく、ユーザーに違いを体験させる
+- **段階的開示**: 認知的負荷を避けるため情報をステップバイステップで表示
+- **具体的な例**: 抽象的な概念ではなく、特定の関連性のあるシナリオを使用

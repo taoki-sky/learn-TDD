@@ -2,6 +2,7 @@
   "name": "tdd-interactive-learning-simulator",
   "version": "1.0.0",
   "description": "TDDの本質的価値を体験的に理解できる学習プラットフォーム",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "vite",

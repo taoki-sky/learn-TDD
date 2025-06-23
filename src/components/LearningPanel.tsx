@@ -21,7 +21,7 @@ const LearningPanel: React.FC<LearningPanelProps> = ({ step, currentPhase }) => 
   }
 
   return (
-    <div className="card-apple p-6 mb-8">
+    <div className="card-apple p-6 mb-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* 学習ポイント */}
         <div>

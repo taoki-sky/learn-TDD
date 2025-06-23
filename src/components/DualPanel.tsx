@@ -11,7 +11,7 @@ interface DualPanelProps {
 
 const DualPanel: React.FC<DualPanelProps> = ({ step, currentPhase, onPhaseChange }) => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
       <TDDPanel 
         step={step}
         currentPhase={currentPhase}
